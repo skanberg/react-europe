@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { gql, graphql } from 'react-apollo';
-import './App.css';
+import React, { Component } from "react";
+import { gql, graphql } from "react-apollo";
+import Schedule from "./Schedule";
+import "./App.css";
 
 const Query = gql`
   query conferenceSchedule {
@@ -23,8 +24,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {console.log(this.props.data)}
-        fdsfds
+        {this.props.data.events &&
+          <Schedule schedule={this.props.data.events[0].schedule} />}
       </div>
     );
   }
