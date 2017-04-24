@@ -6,7 +6,8 @@
     "date-fns": "^1.28.3",
     "react": "^15.5.4",
     "react-apollo": "^1.1.0",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "recompose": "^0.23.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"

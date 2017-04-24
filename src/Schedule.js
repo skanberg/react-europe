@@ -5,6 +5,7 @@ import addHours from "date-fns/add_hours";
 
 const createItem = (item, index) => (
   <div key={index}>
+    {console.log(item)}
     {format(addHours(parse(item.startDate), 2), "YYYY-MM-DD HH:mm Z")}
   </div>
 );
