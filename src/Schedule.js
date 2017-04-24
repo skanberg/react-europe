@@ -1,10 +1,22 @@
 import React from "react";
 import format from "date-fns/format";
-import SwipeableViews from 'react-swipeable-views';
+import SwipeableViews from "react-swipeable-views";
+
+const createSpeaker = ({ avatarUrl, name }) => (
+  <div>
+    <img
+      style={{ width: 70, height: 70, borderRadius: "50%" }}
+      src={avatarUrl}
+    />
+    {" "}
+    {name}
+  </div>
+);
 
 const createItem = (item, index) => (
   <div key={index}>
     {format(item.startDate, "YYYY-MM-DD HH:mm")}: {item.title}
+    {item.speakers.map(createSpeaker)}
   </div>
 );
 

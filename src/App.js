@@ -3,8 +3,8 @@ import { gql, graphql } from "react-apollo";
 import { compose, mapProps, branch, renderComponent } from "recompose";
 import parse from "date-fns/parse";
 import addHours from "date-fns/add_hours";
-import compareAsc from "date-fns/compare_asc";
-import getDate from "date-fns/get_date";
+import compareAsc from 'date-fns/compare_asc';
+import getDate from 'date-fns/get_date';
 import Schedule from "./Schedule";
 import LoadingIndicator from "./LoadingIndicator";
 import "./App.css";
@@ -52,15 +52,15 @@ function createSchedule(schedule) {
     18: result[18].sort((a, b) => compareAsc(a.startDate, b.startDate)),
     19: result[19].sort((a, b) => compareAsc(a.startDate, b.startDate)),
     20: result[20].sort((a, b) => compareAsc(a.startDate, b.startDate)),
-  };
+  }
 }
 
 const withScheduleData = mapProps(({ data }) => ({
   schedule: createSchedule(data.events[0].schedule),
 }));
 
-const App = ({ schedule }) => <Schedule schedule={schedule} />;
-
-export default compose(graphql(Query), withLoadingIndicator, withScheduleData)(
-  App,
+const App = ({ schedule }) => (
+  <Schedule schedule={schedule} />
 );
+
+export default compose(graphql(Query), withLoadingIndicator, withScheduleData)(App);
