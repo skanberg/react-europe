@@ -5,3 +5,7 @@ body {
   background-color: #3B5BA8;
   color: #ffffff;
 }
+
+html, body, #root {
+  height: 100%;
+}
