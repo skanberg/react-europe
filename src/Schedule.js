@@ -15,7 +15,7 @@ const createSpeaker = ({ avatarUrl, name }) => (
 
 const createItem = (item, index) => (
   <div key={index}>
-    {format(item.startDate, "YYYY-MM-DD HH:mm")}: {item.title}
+    {format(item.startDate, "HH:mm")}: {item.title}
     {item.speakers.map(createSpeaker)}
   </div>
 );
