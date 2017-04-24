@@ -1,20 +1,21 @@
 import React from "react";
-import parse from "date-fns/parse";
 import format from "date-fns/format";
-import addHours from "date-fns/add_hours";
+import SwipeableViews from 'react-swipeable-views';
 
 const createItem = (item, index) => (
   <div key={index}>
-    {console.log(item)}
-    {format(addHours(parse(item.startDate), 2), "YYYY-MM-DD HH:mm Z")}
+    {format(item.startDate, "YYYY-MM-DD HH:mm")}: {item.title}
   </div>
 );
 
 const Schedule = ({ schedule }) => (
-  <div>
-    schedule
-    {schedule.map(createItem)}
-  </div>
+  <SwipeableViews>
+    <div>{schedule[16].map(createItem)}</div>
+    <div>{schedule[17].map(createItem)}</div>
+    <div>{schedule[18].map(createItem)}</div>
+    <div>{schedule[19].map(createItem)}</div>
+    <div>{schedule[20].map(createItem)}</div>
+  </SwipeableViews>
 );
 
 export default Schedule;
