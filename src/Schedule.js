@@ -28,7 +28,7 @@ const Tab = ({ day, onClick, selectDay, selected }) => (
     textAlign="center"
     paddingTop={10}
     paddingBottom={10}
-    borderBottom={selected ? "4px solid white" : null}
+    borderBottom={selected ? "4px solid white" : "1px solid #2F4592"}
   >
     <div
       onClick={() => {
@@ -59,7 +59,7 @@ class Schedule extends React.Component {
     return (
       <div>
         <Headroom>
-          <Row width="100%" marginBottom={5} backgroundColor="#3B5BA8">
+          <Row width="100%" backgroundColor="#3B5BA8">
             <Tab day={1} selectDay={this.selectDay} selected={index === 0} />
             <Tab day={2} selectDay={this.selectDay} selected={index === 1} />
             <Tab day={3} selectDay={this.selectDay} selected={index === 2} />
