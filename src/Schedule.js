@@ -2,6 +2,7 @@ import React from "react";
 import format from "date-fns/format";
 import SwipeableViews from "react-swipeable-views";
 import { Row, Block } from "jsxstyle";
+import Headroom from "react-headroom";
 
 const createSpeaker = ({ avatarUrl, name }) => (
   <div>
@@ -57,13 +58,15 @@ class Schedule extends React.Component {
     const { index } = this.state;
     return (
       <div>
-        <Row width="100%" marginBottom={5}>
-          <Tab day={1} selectDay={this.selectDay} selected={index === 0} />
-          <Tab day={2} selectDay={this.selectDay} selected={index === 1} />
-          <Tab day={3} selectDay={this.selectDay} selected={index === 2} />
-          <Tab day={4} selectDay={this.selectDay} selected={index === 3} />
-          <Tab day={5} selectDay={this.selectDay} selected={index === 4} />
-        </Row>
+        <Headroom>
+          <Row width="100%" marginBottom={5} backgroundColor="#3B5BA8">
+            <Tab day={1} selectDay={this.selectDay} selected={index === 0} />
+            <Tab day={2} selectDay={this.selectDay} selected={index === 1} />
+            <Tab day={3} selectDay={this.selectDay} selected={index === 2} />
+            <Tab day={4} selectDay={this.selectDay} selected={index === 3} />
+            <Tab day={5} selectDay={this.selectDay} selected={index === 4} />
+          </Row>
+        </Headroom>
         <SwipeableViews
           index={index}
           onChangeIndex={index => {
