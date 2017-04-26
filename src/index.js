@@ -8,12 +8,10 @@ import {
 import App from "./App";
 import "./index.css";
 
-const networkInterface = createNetworkInterface({
-  uri: "https://www.react-europe.org/gql",
-});
-
 const client = new ApolloClient({
-  networkInterface: networkInterface,
+  networkInterface: createNetworkInterface({
+    uri: "https://www.react-europe.org/gql",
+  }),
 });
 
 ReactDOM.render(

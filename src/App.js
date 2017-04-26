@@ -3,13 +3,13 @@ import { gql, graphql } from "react-apollo";
 import { compose, mapProps, branch, renderComponent } from "recompose";
 import parse from "date-fns/parse";
 import addHours from "date-fns/add_hours";
-import compareAsc from 'date-fns/compare_asc';
-import getDate from 'date-fns/get_date';
+import compareAsc from "date-fns/compare_asc";
+import getDate from "date-fns/get_date";
 import Schedule from "./Schedule";
 import LoadingIndicator from "./LoadingIndicator";
 import "./App.css";
 
-const Query = gql`
+const query = gql`
   query conferenceSchedule {
     events(slug: "reacteurope-2017") {
       schedule {
@@ -46,21 +46,25 @@ function createSchedule(schedule) {
       startDate: date,
     });
   }
+
+  const sort = list =>
+    list.sort((a, b) => compareAsc(a.startDate, b.startDate));
+
   return {
-    16: result[16].sort((a, b) => compareAsc(a.startDate, b.startDate)),
-    17: result[17].sort((a, b) => compareAsc(a.startDate, b.startDate)),
-    18: result[18].sort((a, b) => compareAsc(a.startDate, b.startDate)),
-    19: result[19].sort((a, b) => compareAsc(a.startDate, b.startDate)),
-    20: result[20].sort((a, b) => compareAsc(a.startDate, b.startDate)),
-  }
+    16: sort(result[16]),
+    17: sort(result[17]),
+    18: sort(result[18]),
+    19: sort(result[19]),
+    20: sort(result[20]),
+  };
 }
 
 const withScheduleData = mapProps(({ data }) => ({
   schedule: createSchedule(data.events[0].schedule),
 }));
 
-const App = ({ schedule }) => (
-  <Schedule schedule={schedule} />
-);
+const App = ({ schedule }) => <Schedule schedule={schedule} />;
 
-export default compose(graphql(Query), withLoadingIndicator, withScheduleData)(App);
+export default compose(graphql(query), withLoadingIndicator, withScheduleData)(
+  App,
+);

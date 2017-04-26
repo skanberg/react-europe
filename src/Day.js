@@ -26,13 +26,6 @@ const createItem = (item, index) => (
   </Row>
 );
 
-/*
-
- <Col xs={6} md={3}>
- {schedule.map(createItem)}
- </Col>
- */
-
 const Day = ({ schedule }) => (
   <Grid fluid>
     {schedule.map(createItem)}
