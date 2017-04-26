@@ -2,17 +2,6 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import format from "date-fns/format";
 
-const createSpeaker = ({ avatarUrl, name }) => (
-  <div>
-    <img
-      style={{ width: 70, height: 70, borderRadius: "50%" }}
-      src={avatarUrl}
-    />
-    {" "}
-    {name}
-  </div>
-);
-
 const speakerName = ({ name }) => <div>{name}</div>;
 
 const speakerAvatar = ({ avatarUrl }) => (
