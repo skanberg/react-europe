@@ -1,26 +1,8 @@
 import React from "react";
-import format from "date-fns/format";
 import SwipeableViews from "react-swipeable-views";
 import { Row, Block } from "jsxstyle";
 import Headroom from "react-headroom";
-
-const createSpeaker = ({ avatarUrl, name }) => (
-  <div>
-    <img
-      style={{ width: 70, height: 70, borderRadius: "50%" }}
-      src={avatarUrl}
-    />
-    {" "}
-    {name}
-  </div>
-);
-
-const createItem = (item, index) => (
-  <div key={index}>
-    {format(item.startDate, "HH:mm")}: {item.title}
-    {item.speakers.map(createSpeaker)}
-  </div>
-);
+import Day from "./Day";
 
 const Tab = ({ day, onClick, selectDay, selected }) => (
   <Block
@@ -74,11 +56,11 @@ class Schedule extends React.Component {
           }}
           resistance
         >
-          <div>{schedule[16].map(createItem)}</div>
-          <div>{schedule[17].map(createItem)}</div>
-          <div>{schedule[18].map(createItem)}</div>
-          <div>{schedule[19].map(createItem)}</div>
-          <div>{schedule[20].map(createItem)}</div>
+          <Day schedule={schedule[16]} />
+          <Day schedule={schedule[17]} />
+          <Day schedule={schedule[18]} />
+          <Day schedule={schedule[19]} />
+          <Day schedule={schedule[20]} />
         </SwipeableViews>
       </div>
     );
