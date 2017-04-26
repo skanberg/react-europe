@@ -2,13 +2,14 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import format from "date-fns/format";
 
-const speakerName = ({ name }) => <div>{name}</div>;
+const speakerName = ({ name }, index) => <div key={index}>{name}</div>;
 
-const speakerAvatar = ({ avatarUrl }) => (
-  <span style={{ marginRight: 10 }}>
+const speakerAvatar = ({ avatarUrl }, index) => (
+  <span key={index} style={{ marginRight: 10 }}>
     <img
       style={{ width: 50, height: 50, borderRadius: "50%" }}
       src={avatarUrl}
+      alt=""
     />
   </span>
 );
