@@ -33,12 +33,17 @@ class Schedule extends React.Component {
     return (
       <div>
         <Headroom>
-          <Row width="100%" backgroundColor="#3B5BA8" position="relative">
-            <Tab day={1} onClick={this.selectDay} selected={index === 0}/>
-            <Tab day={2} onClick={this.selectDay} selected={index === 1}/>
-            <Tab day={3} onClick={this.selectDay} selected={index === 2}/>
-            <Tab day={4} onClick={this.selectDay} selected={index === 3}/>
-            <Tab day={5} onClick={this.selectDay} selected={index === 4}/>
+          <Row
+            width="100%"
+            backgroundColor="#3B5BA8"
+            position="relative"
+            boxShadow="0 2px 2px 0 rgba(0,0,0,.14)"
+          >
+            <Tab day={1} onClick={this.selectDay} selected={index === 0} />
+            <Tab day={2} onClick={this.selectDay} selected={index === 1} />
+            <Tab day={3} onClick={this.selectDay} selected={index === 2} />
+            <Tab day={4} onClick={this.selectDay} selected={index === 3} />
+            <Tab day={5} onClick={this.selectDay} selected={index === 4} />
             <Block
               position="absolute"
               backgroundColor="white"

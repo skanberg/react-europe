@@ -8,9 +8,9 @@ const Speaker = ({ avatarUrl, name, twitter }) => (
       src={avatarUrl}
       alt=""
     />
-    <Col justifyContent="space-around" fontWeight={300}>
-      <Block>{name}</Block>
-      <Block>@{twitter}</Block>
+    <Col justifyContent="space-around">
+      <Block fontWeight={400}>{name}</Block>
+      <Block fontWeight={300}>@{twitter}</Block>
     </Col>
   </Row>
 );

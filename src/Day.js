@@ -4,12 +4,13 @@ import Talk from "./Talk";
 
 const Day = ({ schedule }) => (
   <Grid fluid>
-    {schedule.map(({ startDate, title, speakers }, index) => (
+    {schedule.map(({ startDate, title, speakers, description }, index) => (
       <Talk
         key={index}
         startDate={startDate}
         title={title}
         speakers={speakers}
+        description={description}
       />
     ))}
   </Grid>
