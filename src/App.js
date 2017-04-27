@@ -14,12 +14,14 @@ const query = gql`
     events(slug: "reacteurope-2017") {
       schedule {
         title
+        description
         startDate
         type
         length
         speakers {
           name
           avatarUrl
+          twitter
         }
       }
     }
