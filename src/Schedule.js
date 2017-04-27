@@ -12,6 +12,7 @@ class Schedule extends React.Component {
     this.getTabPosition = this.getTabPosition.bind(this);
     this.state = {
       index: 0,
+      move: null,
     };
   }
 
@@ -22,7 +23,8 @@ class Schedule extends React.Component {
   }
 
   getTabPosition() {
-    return `${this.state.index * 20}%`;
+    const { index, move } = this.state;
+    return `${(move !== null ? move : index) * 20}%`;
   }
 
   render() {
@@ -54,7 +56,9 @@ class Schedule extends React.Component {
           }}
           resistance
           onSwitching={(index, type) => {
-            console.log(index, type);
+            this.setState({
+              move: type === "move" ? index : null,
+            });
           }}
         >
           <Day schedule={schedule[16]} />
