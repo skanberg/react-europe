@@ -1,0 +1,19 @@
+exports[`test renders with active tab 1`] = `
+<div
+  className="w-20P text-align-center pt-15 pb-15 _1086erg fw-700">
+  <div
+    onClick={[Function]}>
+    Day 1
+  </div>
+</div>
+`;
+
+exports[`test renders with inactive tab 1`] = `
+<div
+  className="w-20P text-align-center pt-15 pb-15 _1086erg fw-400">
+  <div
+    onClick={[Function]}>
+    Day 1
+  </div>
+</div>
+`;

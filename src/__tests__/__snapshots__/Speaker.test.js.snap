@@ -1,0 +1,20 @@
+exports[`test Speaker renders correctly 1`] = `
+<div
+  className="d-flex flex-direction-row mb-10 _img-w-50 _img-h-50 _img-border-radius-50P _img-mr-10">
+  <img
+    alt=""
+    src="http://server/image.png" />
+  <div
+    className="d-flex flex-direction-column _1bdo1uw">
+    <div
+      className="fw-400">
+      name
+    </div>
+    <div
+      className="fw-300">
+      @
+      twitter
+    </div>
+  </div>
+</div>
+`;
