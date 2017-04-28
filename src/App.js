@@ -7,7 +7,6 @@ import compareAsc from "date-fns/compare_asc";
 import getDate from "date-fns/get_date";
 import Schedule from "./Schedule";
 import LoadingIndicator from "./LoadingIndicator";
-import "./App.css";
 
 const query = gql`
   query conferenceSchedule {

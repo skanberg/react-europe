@@ -1,12 +1,25 @@
 import React from "react";
-import { Col, Block } from "jsxstyle";
+import cxs from "cxs";
 import logo from "./logo.png";
 
+const containerClass = cxs({
+  flexDirection: "column",
+  display: "flex",
+  height: "100%",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+const textClass = cxs({
+  fontSize: 18,
+  marginTop: 20,
+});
+
 const LoadingIndicator = () => (
-  <Col height="100%" alignItems="center" justifyContent="center">
+  <div className={containerClass}>
     <img src={logo} width={150} height={150} alt="" />
-    <Block fontSize={18} marginTop={20}>Loading...</Block>
-  </Col>
+    <div className={textClass}>Loading...</div>
+  </div>
 );
 
 export default LoadingIndicator;

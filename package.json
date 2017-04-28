@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cxs": "^3.0.4",
     "date-fns": "^1.28.3",
-    "jsxstyle": "^1.0.2",
     "react": "^15.5.4",
     "react-apollo": "^1.1.0",
     "react-dom": "^15.5.4",

@@ -1,9 +1,26 @@
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
-import { Row, Block } from "jsxstyle";
+import cxs from "cxs";
 import Headroom from "react-headroom";
 import Tab from "./Tab";
 import Day from "./Day";
+
+const tabContainerClass = cxs({
+  flexDirection: "row",
+  display: "flex",
+  width: "100%",
+  backgroundColor: "#3B5BA8",
+  position: "relative",
+  boxShadow: "0 2px 2px 0 rgba(0,0,0,.14)",
+});
+
+const activeTabIndicatorClass = cxs({
+  position: "absolute",
+  backgroundColor: "#ffffff",
+  height: 4,
+  width: "20%",
+  bottom: 0,
+});
 
 class Schedule extends React.Component {
   constructor(props) {
@@ -33,26 +50,17 @@ class Schedule extends React.Component {
     return (
       <div>
         <Headroom>
-          <Row
-            width="100%"
-            backgroundColor="#3B5BA8"
-            position="relative"
-            boxShadow="0 2px 2px 0 rgba(0,0,0,.14)"
-          >
+          <div className={tabContainerClass}>
             <Tab day={1} onClick={this.selectDay} selected={index === 0} />
             <Tab day={2} onClick={this.selectDay} selected={index === 1} />
             <Tab day={3} onClick={this.selectDay} selected={index === 2} />
             <Tab day={4} onClick={this.selectDay} selected={index === 3} />
             <Tab day={5} onClick={this.selectDay} selected={index === 4} />
-            <Block
-              position="absolute"
-              backgroundColor="white"
-              height={4}
-              width="20%"
-              bottom={0}
+            <div
+              className={activeTabIndicatorClass}
               style={{ left: this.getTabPosition() }}
             />
-          </Row>
+          </div>
         </Headroom>
         <SwipeableViews
           index={index}
